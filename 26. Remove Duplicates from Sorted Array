@@ -1,0 +1,18 @@
+import java.util.*;
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        
+        int k = 0;
+        
+        nums[k++] = nums[0]; // Store the first element by default
+
+        for (int i = 1; i < n; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[k++] = nums[i]; // Keep only unique elements
+            }
+        }
+        return k;
+    }
+}
+//Note: here need to save the first element and start compairing from second element to previous saved element
