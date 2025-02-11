@@ -1,0 +1,39 @@
+// bruteforce approach O(n^2)
+class Solution {
+    public int majorityElement(int[] nums) {
+        int n = nums.length;
+       
+        for(int val:nums){
+            int freq = 0 ;
+            for(int el:nums){
+                if(el==val){
+                    freq++;
+                }
+            }
+            // check 
+            if(freq>n/2){
+                return val;
+            }
+        }
+        return -1;
+    }
+}
+
+// optimise approach O(1)
+class Solution {
+    public int majorityElement(int[] nums) {
+        // more voting algo
+        int n = nums.length; 
+        int freq=0; int ans =0;
+        for(int i =0;i<n;i++){
+            if(freq == 0){
+                return nums[i];
+            }
+            if(ans==nums[i]) 
+            freq++;
+            else 
+            freq--;
+        }
+return ans;
+    }
+}
