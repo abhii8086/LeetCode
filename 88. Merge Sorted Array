@@ -1,15 +1,41 @@
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int i = m-1; int j = n-1; int k= (m+n)-1;
-     
-        while(j>=0){
-            if(i>=0 && nums1[i]>nums2[j]){
-                nums1[k--] = nums1[i--]; 
-            }else{
+    
+// bruteforce approach O(m+n)
+    //     int temp[] = new int[m]; //for copy big array into temp
+    //     int i =0;
+    //     int j =0;
+    //     int k =0;
+
+    //     while(k<m)
+    //         temp[k]=nums1[k++];
+       
+    //    //reset the reference 
+    //     k=0;
+
+    //     while(k<m && j<n){
+    //         if(temp[k]<=nums2[j])
+    //             nums1[i++]=temp[k++];
+    //         else
+    //             nums1[i++]=nums2[j++];
+    //     }
+
+    //     while(k<m)
+    //         nums1[i++]=temp[k++];
+
+    //     while(j<n)
+    //         nums1[i++]=nums2[j++];
+
+    // optimise approach O(m+n)
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) 
+                nums1[k--] = nums1[i--];
+           else 
                 nums1[k--] = nums2[j--];
-            }
-        }
+         }
     }
 }
-
-//Note: here the actual logic is derived from mergeSort algo
