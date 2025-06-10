@@ -1,14 +1,10 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-        int k = 0; // filler variable when condition is meet
-        for(int i = 0;i<nums.length;i++){ // iterate over the whole array 
-            if(nums[i]!=val){ // when current value dosen't match with given value  
-                nums[k] = nums[i];
-                k++;
-            }
+        int count = 0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=val)
+                nums[count++] = nums[i];
         }
-        return k;
-    }
+        return count;
+    } 
 }
-
-//Note: simply iterate over the entire array and save the element when current value dosen't match with given value 
