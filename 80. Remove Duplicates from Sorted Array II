@@ -2,7 +2,7 @@ class Solution {
     public int removeDuplicates(int[] nums) {
         int i = 0 ; // for first element 
         for(int n:nums){
-            if(i<2 || n!=nums[i-2]){ // for second & 3rd check
+            if(i<2 || n!=nums[i-2]){ // here i<2 for 0,1 for postion and for third position check a[i-2] concept
                 nums[i++] = n;
             }
         }
