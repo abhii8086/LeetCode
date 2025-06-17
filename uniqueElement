@@ -1,0 +1,14 @@
+public class uniqueElement {
+
+	public static void main(String[] args) {
+		int arr[] = { 4, 6, 4, 5, 5, 7, 6 };
+		int n = arr.length;
+		int unique = arr[0];
+
+		for (int i = 1; i < n; i++) {
+			unique ^= arr[i];
+		}
+		System.out.println(unique);
+	}
+
+}
